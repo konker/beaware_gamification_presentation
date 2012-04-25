@@ -1,0 +1,92 @@
+body {
+    font-family: 'Ubuntu', verdana, serif;
+    font-weight: 300;
+    }
+    
+#logo {
+    position: absolute;
+    top: 27px;
+    left: 27px;
+    z-index: 100;
+    }
+    #logo a {
+        background: none;
+        border-radius: 0;
+        }
+    #logo img {
+        width: 160px;
+        }
+    .print-view #logo {
+        top: 54px;
+        left: 54px;
+        }
+
+#controls {
+    display: none;
+    position: absolute;
+    top: 27px;
+    right: 27px;
+    width: 24.0em;
+    padding: 1.0em;
+    background: #fff;
+    border-radius: 8px;
+    opacity: 1;
+    kcursor: pointer !important;
+    z-index: 99;
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+    }
+    #controls.over {
+        opacity: 1;
+        }
+
+h1  {
+    font-size: 150%;
+    font-weight: 500;
+    text-align: left;
+    font-family: 'Ubuntu', verdana, sans-serif;
+    }
+    h1.image-title {
+        text-align: center;
+        margin-bottom: 0.35em;
+        }
+.step {
+    line-height: 1.2;
+    }
+
+.splash h1 {
+    text-align: center;
+    kfont-family: 'PT Serif', georgia, serif;
+    margin-bottom: 0;
+    line-height: 1.2;
+    }
+
+.tagline {
+    font-size: 80%; 
+    margin-bottom: 0.5em;
+    }
+.creditline {
+    margin-top: 1.0em;
+    font-size: 60%;
+    }
+
+a.small { font-size: 50%; }
+.small-print { font-size: 80%; }
+
+.gallery img {
+    max-height: 400px;
+    }
+.fade { opacity: 0.5; }
+.pb { page-break-after: always; }
+
+.print-view #overview {
+    display: none;
+    }
+.print-view .step:nth-last-child(2) {
+    page-break-after: auto !important;
+    }
+

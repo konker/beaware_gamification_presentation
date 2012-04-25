@@ -1,0 +1,83 @@
+Implementation notes
+==============================================================================
+
+CSS3
+------------------------------------------------------------------------------
+- CSS3 3D transforms
+- CSS3 transitions
+- CSS3 animations
+- HTML5 touch events
+
+- div#stage
+    <code>
+        -webkit-perspective: 500;
+    </code>
+
+- CSS3 3D transforms:
+    http://www.w3.org/TR/css3-3d-transforms/
+
+- div#stage > div#cardRing
+    <code>
+        -webkit-animation-name: y-spin-plus;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-iteration-count: 0;
+        -webkit-animation-timing-function: linear;
+    </code>
+
+- CSS3 animations
+    http://www.w3.org/TR/css3-animations/
+
+- div#stage > div#cardRing > div.card
+    <code>
+        -webkit-transform: translateX(n), translaterZ(m)
+        -webkit-transform-style: preserve-3d;
+    </code>
+
+- div#stage > div#cardRing > div.card > div.cardWrapper
+    - contains all the card content
+    <code>
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1.5s;
+    </code>
+
+- div#stage > div#cardRing > .flipped > div.cardWrapper
+    - attach class 'flipped' to flip the card over
+    <code>
+        /* rotate the card 180 degrees along the y-axis. */
+        -webkit-transform: rotateY(180deg) scale(2, 2);
+    </code>
+
+- CSS3 transitions:
+    http://www.w3.org/TR/css3-transitions/
+
+
+/* keyframe declarations */
+@-webkit-keyframes y-spin-plus 
+{
+    /* Rotate the cylinder by 0 degrees around the y-axis at the start of the animation */
+    0%      { -webkit-transform: rotateY(0deg); }
+
+    /* Rotate the cylinder by 180 degrees around the y-axis at 50% into the animation */
+    50%     { -webkit-transform: rotateY(180deg); }
+
+    /* Rotate the cylinder by 360 degrees around the y-axis when the animation is ending */
+    100%    { -webkit-transform: rotateY(360deg); }
+}
+
+
+- touchstart event
+    - track the inital position of the carousel
+
+- touchmove events
+    - track how much the user has moved
+        - also distinguishes it as a "drag" event rather than a "click"
+    - rotate the carousel incrementally
+
+- touchend
+    - rotate the carousel to the nearest card position
+
+- Touch events version 1
+    http://www.w3.org/TR/touch-events/
+
+
